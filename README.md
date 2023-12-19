@@ -1,7 +1,7 @@
 This is my code for the 42 project, push_swap.
 
 I've tried a few different approaches already but this one is the best (least number of operations required) so far.
-Still going to play around a bit as there are a few things that don't work as expected (the code does work overall).
+Still going to play around a bit as there are a few things that don't work as expected but the code does work overall.
 
 I have included the checker provided by the school but will make my own in the near future.
 
