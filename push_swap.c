@@ -6,7 +6,7 @@
 /*   By: samoore <samoore@student.42london.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:38:45 by samoore           #+#    #+#             */
-/*   Updated: 2023/12/19 14:43:18 by samoore          ###   ########.fr       */
+/*   Updated: 2023/12/19 16:17:08 by samoore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,7 @@ void	push_to_a(t_stack *stx)
 void	ft_sort(t_stack *stx)
 {
 	t_move	mov;
-	int		i;
-
+	
 	while (stx->b_len > 0)
 	{
 		find_best(stx, &mov);

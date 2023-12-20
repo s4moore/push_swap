@@ -6,7 +6,7 @@
 /*   By: samoore <samoore@student.42london.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:57:56 by samoore           #+#    #+#             */
-/*   Updated: 2023/12/19 14:25:49 by samoore          ###   ########.fr       */
+/*   Updated: 2023/12/20 14:11:02 by samoore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	find_target_a(t_stack *stx, int j)
 {
-	int	lowest_pos;
 	int	i;
 
 	i = find_low(stx);
@@ -39,16 +38,16 @@ void	get_cost(int *target, int *moves, int *up_down, int len)
 		*up_down = 0;
 		return ;
 	}
-	if (*target < len / 2)
+	if (*target < (len / 2))
 	{
-		*moves = *target + 1;
+		*moves = (*target + 1);
 		*up_down = DOWN;
 	}
 	else
 	{
-		*moves = len - *target - 1;
+		*moves = (len - *target - 1);
 		if (*moves == 0)
-			*up_down == 0;
+			*up_down = 0;
 		else
 			*up_down = UP;
 	}
@@ -56,10 +55,10 @@ void	get_cost(int *target, int *moves, int *up_down, int len)
 
 void	optimise_cost(t_move *m, int a_len, int b_len)
 {
-	if (m->a_up_down == 0)
-		m->moves = m->b_up_down;
-	else if (m->b_up_down == 0)
-		m->moves = m->a_up_down;
+	if (m->move_a == 0)
+		m->moves = m->move_b;
+	else if (m->move_b == 0)
+		m->moves = m->move_a;
 	else if (m->a_up_down == m->b_up_down)
 		m->moves = max(m->move_a, m->move_b);
 	else if (up_a_up_b_down(m, b_len))

@@ -6,7 +6,7 @@
 /*   By: samoore <samoore@student.42london.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:39:24 by samoore           #+#    #+#             */
-/*   Updated: 2023/12/19 14:48:14 by samoore          ###   ########.fr       */
+/*   Updated: 2023/12/19 16:47:43 by samoore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	rrr(t_stack *stx);
 void	sa(t_stack *stx);
 void	set_m(t_move *m, char a_or_b, int up_down, int moves);
 void	sb(t_stack *stx);
+void	sort_last(t_stack *stx);
 void	ss(t_stack *stx);
 int		top(t_stack *stx);
 int		up_a_up_b_down(t_move *m, int b_len);

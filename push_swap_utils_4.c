@@ -6,7 +6,7 @@
 /*   By: samoore <samoore@student.42london.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 12:37:12 by samoore           #+#    #+#             */
-/*   Updated: 2023/12/19 14:29:46 by samoore          ###   ########.fr       */
+/*   Updated: 2023/12/20 14:00:27 by samoore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	up_a_up_b_down(t_move *m, int b_len)
 		return (0);
 	if (m->b_up_down == UP)
 		return (0);
-	if (b_len - m->j - 1 > m->move_a + m->move_b)
+	if (b_len - m->j - 1 < m->move_a + m->move_b)
 		return (0);
 	return (1);
 }
@@ -33,7 +33,7 @@ int	up_b_up_a_down(t_move *m, int a_len, int b_len)
 		return (0);
 	if (m->a_up_down == UP)
 		return (0);
-	if (a_len - m->i - 1 > m->move_a + m->move_b)
+	if (a_len - m->i - 1 < m->move_a + m->move_b)
 		return (0);
 	return (1);
 }
@@ -46,10 +46,11 @@ int	down_a_down_b_up(t_move *m, int b_len)
 		return (0);
 	if (m->a_up_down == UP)
 		return (0);
+	if (m->j + 1 < m->move_a + m->move_b)
+		return (0);
 	return (1);
 }
-/*	if (m->j + 1 > m->move_a + m->move_b)
-		return (0);*/
+
 
 int	down_a_up_b_down(t_move *m, int b_len)
 {
@@ -59,10 +60,10 @@ int	down_a_up_b_down(t_move *m, int b_len)
 		return (0);
 	if (m->b_up_down == UP)
 		return (0);
+	if (m->i + 1 < m->move_a + m->move_b)
+		return (0);
 	return (1);
 }
-/*f (m->i + 1 > m->move_a + m->move_b)
-//		return (0);*/
 
 void	set_m(t_move *m, char a_or_b, int up_down, int moves)
 {

@@ -6,7 +6,7 @@
 /*   By: samoore <samoore@student.42london.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 07:47:13 by samoore           #+#    #+#             */
-/*   Updated: 2023/12/19 11:10:05 by samoore          ###   ########.fr       */
+/*   Updated: 2023/12/19 16:56:11 by samoore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ void	ft_pre_sort(t_stack *stx, int num)
 	int	third;
 
 	third = (stx->a_len) / 3;
+	third = max(1, third);
 	rem = stx->a_len % 3;
-	if (third < 5)
+	if (third + rem < 5)
 		target = 5;
 	else
-		target = third;
+		target = third + rem;
 	push_to_b(stx, target, third, rem);
+	sort_last(stx);
 	if (stx->a_len == 2)
 	{
 		if (top(stx) > stx->a[stx->a_len - 2])

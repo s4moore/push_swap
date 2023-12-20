@@ -6,7 +6,7 @@
 /*   By: samoore <samoore@student.42london.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 18:56:14 by samoore           #+#    #+#             */
-/*   Updated: 2023/12/19 14:45:49 by samoore          ###   ########.fr       */
+/*   Updated: 2023/12/19 17:04:43 by samoore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,7 @@ void	sort_last(t_stack *stx)
 		else
 			pb(stx);
 	}
-	if (stx->a_len == 5)
-		clean_tail(stx);
+	clean_tail(stx);
 }
 
 void	push_to_b(t_stack *stx, int target, int third, int rem)
@@ -98,15 +97,14 @@ void	push_to_b(t_stack *stx, int target, int third, int rem)
 		sort_pos = find_sorted_pos(stx, top(stx));
 		if (in_set(top(stx), stx->sorted, min(5, stx->a_len)))
 			ra(stx);
-		else if (sort_pos >= (stx->sorted_len - third - 1 - rem))
+		else if (sort_pos >= (stx->sorted_len - (third) - 1))
 		{
 			pb (stx);
 			rb (stx);
 		}
-		else if (sort_pos >= (stx->sorted_len - (2 * third) - 1 - rem))
+		else if (sort_pos >= (stx->sorted_len - (2 * third) - 1))
 			pb (stx);
 		else
 			ra(stx);
 	}
-	sort_last(stx);
 }
