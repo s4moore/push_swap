@@ -22,7 +22,7 @@ OBJ_FILES = $(patsubst %.c, $(OBJ_DIR)%.o, $(SRC_FILES))
 BONUS_FILES = checker.c  checker_get_nums.c checker_merge_sort.c checker_rules_rr.c checker_utils.c \
 			  checker_instructions.c checker_rules_r.c checker_rules_sp.c
 
-CC_FLAGS = 
+CC_FLAGS = -Wall -Werror -Wextra -g
 
 SRC_DIR = srcs/
 BONUS_DIR = bonus/
