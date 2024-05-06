@@ -22,15 +22,8 @@
 # define DOWN -1
 # define ERROR 3000000000
 
-typedef struct s_cmd
-{
-	struct s_cmd	*next;
-	char			*str;
-}	t_cmd;
-
 typedef struct s_stack
 {
-	t_cmd	*list;
 	int	*a;
 	int	*b;
 	int	*sorted;
