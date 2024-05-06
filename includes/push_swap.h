@@ -25,11 +25,16 @@
 typedef struct s_stack
 {
 	int	*a;
-	int	*b;
-	int	*sorted;
-	int	total_nums;
 	int	a_len;
+	int	*b;
 	int	b_len;
+	int	*sorted;
+	int	sorted_len;
+	int	*lis;
+	int	lis_len;
+	int	*nums_to_split;
+	int	nums_to_split_len;
+	int	total_nums;
 	int	moves;
 	int	lowest;
 	int	highest;
@@ -40,7 +45,6 @@ typedef struct s_stack
 	int	move_b;
 	int	a_up_down;
 	int	b_up_down;
-	int	sorted_len;
 }	t_stack;
 
 typedef struct s_move
@@ -60,13 +64,15 @@ int		down_a_up_b_down(t_move *m, int b_len);
 void	down_down(t_stack *stx);
 void	find_best(t_stack *stx, t_move *mov);
 int		find_low(t_stack *stx);
-void	ft_pre_sort(t_stack *stx, int num);
-int		find_sorted_pos(t_stack *stx, int num);
+void	ft_pre_sort(t_stack *stx);
+int		find_high(t_stack *stx);
+int		find_pos(int *array, int num, int len);
 int		find_target_a(t_stack *stx, int j);
 void	free_stack(t_stack *stx);
 void	*ft_calloc(int nmemb, int size);
 int		ft_sorted(t_stack *stx);
-void	ft_make_sorted(t_stack *stx);
+void	ft_make_sorted(t_stack *stx, int **array, int len);
+void	get_lis(t_stack *stx);
 void	get_nums(int argc, char **argv, t_stack *stx);
 int		in_set(int target, int *set, int size);
 int		max(int a, int b);
@@ -75,7 +81,7 @@ void	pa(t_stack *stx);
 void	pb(t_stack *stx);
 void	pr(t_stack *stx);
 void	print_arr(int *arr, int len);
-void	push_to_b(t_stack *stx, int target, int thrid, int rem);
+void	push_to_b(t_stack *stx, int high_nums);
 void	putstr(char *str);
 void	ra(t_stack *stx);
 void	rb(t_stack *stx);

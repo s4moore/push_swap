@@ -10,23 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	find_target_a(t_stack *stx, int j)
 {
 	int	i;
+	int	low;
 
 	i = find_low(stx);
+	low = stx->a[i];
+	if (stx->b[j] < stx->a[i])
+		return (i);
 	if (i == 0)
 		i = stx->a_len - 1;
 	else
 		i -= 1;
-	while (stx->a[i] != stx->lowest && stx->a[i] < stx->b[j])
+	while (stx->a[i] != low && stx->a[i] < stx->b[j])
 	{
 		i--;
 		if (i == -1)
 			i = stx->a_len - 1;
 	}
+
 	return (i);
 }
 

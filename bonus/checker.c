@@ -44,9 +44,6 @@ int	compare(char *s1, char *s2)
 int	main(int argc, char **argv)
 {
 	t_stack	stx;
-	int		i;
-	int		low;
-	t_cmd	*list;
 
 	if (argc == 1)
 		exit (0);

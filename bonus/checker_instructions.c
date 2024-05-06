@@ -39,7 +39,7 @@ int	good_instruction(char *str)
 	return (0);
 }
 
-char *gnl(int fd)
+char *gnl(void)
 {
 	char	*res;
 	int		i;
@@ -69,7 +69,7 @@ t_cmd	*get_instructions (void)
 
 	prev = NULL;
 	head = NULL;
-	while ((str = gnl(0)))
+	while ((str = gnl()))
 	{
 		if (!good_instruction(str))
 		{

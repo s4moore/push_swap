@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_bzero(void *dst, int n)
 {
@@ -29,13 +29,17 @@ void	ft_bzero(void *dst, int n)
 int	find_low(t_stack *stx)
 {
 	int	i;
+	int	low;
 
 	i = 0;
-	while (stx->a[i] != stx->lowest)
+	low = 0;
+	while (i < stx->a_len)
 	{
+		if (stx->a[i] < stx->a[low])
+			low = i;
 		i++;
 	}
-	return (i);
+	return (low);
 }
 
 int	ft_sorted(t_stack *stx)

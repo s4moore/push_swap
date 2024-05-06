@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 long int	ft_atoi(char *s)
 {
-	long int	res;
-	int			i;
-	int			neg;
+	long long int	res;
+	int				i;
+	int				neg;
 
 	i = 0;
 	res = 0;
-	neg = 1;
+	neg = 0;
 	if (s[i] == '-' || s[i] == '+')
 	{
 		if (s[i] == '-')
-			neg = -1;
+			neg = 1;
 		i++;
 	}
 	if (s[i] < '0' || s[i] > '9')
@@ -33,9 +33,13 @@ long int	ft_atoi(char *s)
 	{
 		res *= 10;
 		res += s[i++] - '0';
-		if (res < -2147483648 || res > 2147483647)
+		if (res > 214748648)
 			return (ERROR);
 	}
+	if (neg)
+		res *= -1;
+	if (res < -2147483648 || res > 2147483647)
+			return (ERROR);
 	return (res);
 }
 
@@ -50,20 +54,22 @@ void	init_stack(t_stack *stx, int argc)
 	stx->total_nums = argc - 1;
 }
 
-int	ft_check_dupes(int *nums, int len)
+void	make_helper_arrays(t_stack *stx)
 {
-	int	i;
+	int i;
 
-	i = 1;
-	while (i < len)
+	i = 0;
+	ft_make_sorted(stx, &stx->sorted, stx->a_len - 1);
+	get_lis(stx);
+	stx->nums_to_split_len = 0;
+	stx->nums_to_split = malloc(sizeof(int) * (stx->total_nums - stx->lis_len));
+	while (i < stx->total_nums)
 	{
-		if (nums[i] == nums[i - 1])
-		{
-			return (1);
-		}
+		if (!in_set(stx->a[i], stx->lis, stx->lis_len))
+			stx->nums_to_split[stx->nums_to_split_len++] = stx->a[i];
 		i++;
 	}
-	return (0);
+	ft_make_sorted(stx, &stx->nums_to_split, stx->nums_to_split_len - 1);
 }
 
 void	get_nums(int argc, char **argv, t_stack *stx)
@@ -75,7 +81,9 @@ void	get_nums(int argc, char **argv, t_stack *stx)
 	i = 1;
 	while (i < argc)
 	{
-		t = ft_atoi(argv[i]);
+		t = ft_atoi(argv[i]);		{
+			
+		}
 		if (t == ERROR)
 		{
 			printf("Error\n");
@@ -86,11 +94,5 @@ void	get_nums(int argc, char **argv, t_stack *stx)
 		stx->a_len++;
 		stx->sorted[argc - i++ - 1] = (int)t;
 	}
-	ft_make_sorted(stx);
-	if (ft_check_dupes(stx->sorted, stx->a_len))
-	{
-		printf("Error");
-		free_stack(stx);
-		exit (1);
-	}
+	make_helper_arrays(stx);
 }

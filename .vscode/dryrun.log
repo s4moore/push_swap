@@ -1,0 +1,20 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/samoore/temp'
+mkdir -p objs/
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/checker.c -o objs/checker.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/cost.c -o objs/cost.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/get_nums.c -o objs/get_nums.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/lis.c -o objs/lis.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/merge_sort.c -o objs/merge_sort.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/pre_sort.c -o objs/pre_sort.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/push_swap.c -o objs/push_swap.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/rules_r.c -o objs/rules_r.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/rules_rr.c -o objs/rules_rr.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/rules_sp.c -o objs/rules_sp.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/utils_2.c -o objs/utils_2.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/utils_3.c -o objs/utils_3.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/utils_4.c -o objs/utils_4.o
+gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/utils.c -o objs/utils.o
+gcc  objs/checker.o  objs/cost.o  objs/get_nums.o  objs/lis.o  objs/merge_sort.o  objs/pre_sort.o  objs/push_swap.o  objs/rules_r.o  objs/rules_rr.o  objs/rules_sp.o  objs/utils_2.o  objs/utils_3.o  objs/utils_4.o  objs/utils.o -o push_swap
+make: Leaving directory '/home/samoore/temp'
+ 

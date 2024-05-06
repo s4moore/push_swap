@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	top(t_stack *stx)
 {
 	return (stx->a[stx->a_len - 1]);
 }
 
-int	find_sorted_pos(t_stack *stx, int num)
+int	find_pos(int *array, int num, int len)
 {
 	int	i;
 
 	i = 0;
-	while (stx->sorted[i] != num)
+	while (i < len && array[i] != num)
 		i++;
 	return (i);
 }
@@ -63,6 +63,37 @@ void	ft_sort(t_stack *stx)
 	}
 }
 
+int	ft_nearly_sorted(t_stack *stx)
+{
+	int	i;
+	int	j;
+
+	//print_arr(stx->a, stx->a_len);
+	j = find_high(stx);
+	i = j + 1;
+	if (i == stx->a_len)
+		i = 0;
+	while (i != j)
+	{
+		if (i > 0 && stx->a[i] > stx->a[i - 1])
+			return (0);
+		else if (stx->a[i] > stx->a[stx->a_len - 1])
+			return (0);
+		i++;
+		if (i == stx->a_len)
+			i = 0;
+	}
+	return (1);
+}
+
+void	print_arr(int *arr, int len)
+{
+	int i = 0;
+	while (i < len)
+		printf("%d ", arr[i++]);
+	printf ("\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	stx;
@@ -73,8 +104,14 @@ int	main(int argc, char **argv)
 	if (ft_sorted(&stx))
 		exit (0);
 	stx.moves = 0;
-	ft_pre_sort(&stx, 3);
-	ft_sort(&stx);
+	if (stx.total_nums > 3)
+	{
+		ft_pre_sort(&stx);
+		ft_sort(&stx);
+	}
+	else
+		if (!ft_nearly_sorted(&stx))
+			sa(&stx);
 	i = find_low(&stx);
 	low = stx.a[i];
 	if (i < stx.a_len / 2)
@@ -83,5 +120,7 @@ int	main(int argc, char **argv)
 	else
 		while (top(&stx) != low)
 			ra(&stx);
+	// print_arr(stx.a, stx.a_len);
+	// print_arr(stx.b, stx.b_len);
 	free_stack(&stx);
 }

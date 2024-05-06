@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sa(t_stack *stx)
 /* Swap the first 2 elements at the top of stack a.
@@ -63,9 +63,6 @@ void	pa(t_stack *stx)
 /* Take the first element at the top of b and put it at the top of a.
 Do nothing if b is empty*/
 {
-	int	swap;
-	int	i;
-
 	if (stx->b_len == 0)
 		return ;
 	stx->a[stx->a_len] = stx->b[stx->b_len - 1];
@@ -79,9 +76,6 @@ void	pb(t_stack *stx)
 /* Take the first element at the top of a and put it at the top of b.
 Do nothing if a is empty*/
 {
-	int	swap;
-	int	i;
-
 	if (stx->a_len == 0)
 		return ;
 	stx->b[stx->b_len] = stx->a[stx->a_len - 1];

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	up_up(t_stack *stx)
 {
@@ -52,59 +52,100 @@ void	down_down(t_stack *stx)
 	}
 }
 
-void	clean_tail(t_stack *stx)
-{
-	int	up_down;
+// void	clean_tail(t_stack *stx)
+// {
+// 	int	up_down;
 
-	while (stx->a_len > 3)
-	{
-		up_down = up_or_down(stx->a, &stx->sorted[3], stx->a_len, 2);
-		if (up_down == 0)
-			pb(stx);
-		else if (up_down == UP)
-		{
-			while (top(stx) != stx->sorted[4] && top(stx) != stx->sorted[3])
-				rra(stx);
-			pb(stx);
-		}
-		else
-		{
-			while (top(stx) != stx->sorted[4] && top(stx) != stx->sorted[3])
-				ra(stx);
-			pb(stx);
-		}
-	}
-}
+// 	while (stx->a_len > 3)
+// 	{
+// 		up_down = up_or_down(stx->a, &stx->sorted[3], stx->a_len, 2);
+// 		if (up_down == 0)
+// 			pb(stx);
+// 		else if (up_down == UP)
+// 		{
+// 			while (top(stx) != stx->sorted[4] && top(stx) != stx->sorted[3])
+// 				rra(stx);
+// 			pb(stx);
+// 		}
+// 		else
+// 		{
+// 			while (top(stx) != stx->sorted[4] && top(stx) != stx->sorted[3])
+// 				ra(stx);
+// 			pb(stx);
+// 		}
+// 	}
+// }
 
 void	sort_last(t_stack *stx)
 {
-	while (stx->a_len > 5)
+	while (stx->a_len > stx->lis_len)
 	{
-		if (in_set(top(stx), stx->sorted, 5))
+		if (in_set(top(stx), stx->lis, stx->lis_len))
 			ra(stx);
 		else
 			pb(stx);
 	}
-	clean_tail(stx);
 }
 
-void	push_to_b(t_stack *stx, int target, int third, int rem)
+int	get_low_nums(t_stack *stx)
+{
+	int	i;
+	int	res;
+
+	i = 0;
+	res = 0;
+	while (i < stx->nums_to_split_len)
+	{
+		if (find_pos(stx->sorted, stx->nums_to_split[i], stx->sorted_len) > stx->total_nums - (stx->total_nums / 3))
+			res++;
+		i++;
+	}
+	return (res);
+}
+
+void	ft_pre_sort(t_stack *stx)
 {
 	int	sort_pos;
+	int	low_nums;
 
-	while (stx->a_len > target)
+	low_nums = get_low_nums(stx);
+	while (stx->a_len > stx->lis_len + low_nums)
 	{
-		sort_pos = find_sorted_pos(stx, top(stx));
-		if (in_set(top(stx), stx->sorted, min(5, stx->a_len)))
-			ra(stx);
-		else if (sort_pos >= (stx->sorted_len - (third) - 1))
+		if (in_set(top(stx), stx->lis, stx->lis_len))
 		{
-			pb (stx);
-			rb (stx);
-		}
-		else if (sort_pos >= (stx->sorted_len - (2 * third) - 1))
-			pb (stx);
-		else
 			ra(stx);
+			continue ;
+		}
+		sort_pos = find_pos(stx->sorted, top(stx), stx->sorted_len);
+		if (sort_pos < stx->sorted_len / 3)
+		{
+			pb(stx);
+			rb(stx);
+		}
+		else if (sort_pos > (stx->sorted_len - (stx->sorted_len / 3)))
+		{
+			ra(stx);
+		}
+		else 
+		{
+			pb(stx);
+		}
 	}
+	sort_last(stx);
+}
+
+int	find_high(t_stack *stx)
+{
+	int	i;
+	int	high;
+
+	i = 0;
+	high = 0;
+	while (i < stx->a_len)
+	{
+		if (stx->a[i] > stx->a[high])
+			high = i;
+		i++;
+	}
+	return (high);
 }

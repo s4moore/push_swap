@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	find_max(int *nums, int a_len)
 {
@@ -27,21 +27,19 @@ int	find_max(int *nums, int a_len)
 	}
 	return (j);
 }
-
+/*
 void	ft_pre_sort(t_stack *stx, int num)
 {
-	int	rem;
 	int	target;
 	int	third;
 
 	third = (stx->a_len) / 3;
 	third = max(1, third);
-	rem = stx->a_len % 3;
-	if (third + rem < 5)
+	if (third < 5)
 		target = 5;
 	else
 		target = third + rem;
-	push_to_b(stx, target, third, rem);
+	push_to_b(stx, target, third);
 	sort_last(stx);
 	if (stx->a_len == 2)
 	{
@@ -56,3 +54,32 @@ void	ft_pre_sort(t_stack *stx, int num)
 	if (top(stx) > stx->a[stx->a_len - 2])
 		sa(stx);
 }
+
+int	get_low_nums(t_stack *stx)
+{
+	int	i;
+	int	res;
+
+	i = 0;
+	res = 0;
+	while (i < stx->lis_len)
+	{
+		if (find_sorted_pos(stx, stx->lis[i]) <= stx->total_nums - stx->total_nums / 3)
+			res++;
+		i++;
+	}
+	return (res);
+}
+
+void	ft_pre_sort(t_stack *stx)
+{
+	int	low_nums;
+
+	//print_arr(stx->lis, stx->lis_len);
+	//read(1, NULL, 1);
+	low_nums = get_low_nums(stx);
+	//target = max(stx->lis_len, (stx->total_nums - stx->total_nums / 3) + low_nums);
+	push_to_b(stx, low_nums);
+	//print_arr(stx->sorted, stx->sorted_len);
+}
+*/

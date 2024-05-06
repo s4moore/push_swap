@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	*make_array(int *nums, int start, int size)
 {
@@ -68,10 +68,32 @@ void	merge_sort(int *nums, int left, int right)
 	}
 }
 
-void	ft_make_sorted(t_stack *stx)
+int	ft_check_dupes(int *nums, int len)
 {
-	merge_sort(stx->sorted, 0, stx->a_len - 1);
+	int	i;
+
+	i = 1;
+	while (i < len)
+	{
+		if (nums[i] == nums[i - 1])
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+void	ft_make_sorted(t_stack *stx, int **array, int len)
+{
+	merge_sort(*array, 0, len);
 	stx->lowest = stx->sorted[0];
 	stx->highest = stx->sorted[stx->a_len - 1];
 	stx->sorted_len = stx->a_len;
+	if (ft_check_dupes(stx->sorted, stx->a_len))
+	{
+		printf("Error");
+		free_stack(stx);
+		exit (1);
+	}
 }

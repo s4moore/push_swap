@@ -20,11 +20,11 @@ long int	ft_atoi(char *s)
 
 	i = 0;
 	res = 0;
-	neg = 1;
+	neg = 0;
 	if (s[i] == '-' || s[i] == '+')
 	{
 		if (s[i] == '-')
-			neg = -1;
+			neg = 1;
 		i++;
 	}
 	if (s[i] < '0' || s[i] > '9')
@@ -33,9 +33,13 @@ long int	ft_atoi(char *s)
 	{
 		res *= 10;
 		res += s[i++] - '0';
-		if (res < -2147483648 || res > 2147483647)
+		if (res > 2147483648)
 			return (ERROR);
 	}
+	if (neg)
+		res *= -1;
+	if (res < -2147483648 || res > 2147483647)
+		return (ERROR);
 	return (res);
 }
 
