@@ -1,7 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/samoore/temp'
 mkdir -p objs/
- 
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/cost.c -o objs/cost.o
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/cost_optimise.c -o objs/cost_optimise.o
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/find_nums.c -o objs/find_nums.o
@@ -13,13 +12,10 @@ gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/push_swap.c -o objs/push_swap.o
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/rules_r.c -o objs/rules_r.o
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/rules_rr.c -o objs/rules_rr.o
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/rules_sp.c -o objs/rules_sp.o
- 
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/sort_first.c -o objs/sort_first.o
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/sort_main.c -o objs/sort_main.o
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/up_down.c -o objs/up_down.o
- 
 gcc -Wall -Werror -Wextra -g -Iincludes/ -c srcs/utils.c -o objs/utils.o
- 
 gcc  objs/cost.o  objs/cost_optimise.o  objs/find_nums.o  objs/get_nums.o  objs/lis.o  objs/memory.o  objs/merge_sort.o  objs/push_swap.o  objs/rules_r.o  objs/rules_rr.o  objs/rules_sp.o  objs/sort_first.o  objs/sort_main.o  objs/up_down.o  objs/utils.o -o push_swap
 make: Leaving directory '/home/samoore/temp'
  

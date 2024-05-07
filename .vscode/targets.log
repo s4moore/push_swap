@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May  7 11:47:19 2024
+# Make data base, printed on Tue May  7 12:30:25 2024
 
 # Variables
 
@@ -51,7 +51,7 @@ MAIL = samoore@student.42london.com
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/samoore/temp
+OLDPWD = /home/samoore/temp/bonus
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -97,7 +97,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 307333
+VSCODE_PID = 310928
 # environment
 KRB5CCNAME = FILE:/tmp/krb5cc_101194_9focOg
 # environment
@@ -129,7 +129,7 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/fd76ab72_d14c_471d_bf0d_66b85101aaaf
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/049e46d0_0013_470c_b4f2_83c35649652f
 # environment
 MAKELEVEL := 0
 # default
@@ -173,7 +173,7 @@ LOGNAME = samoore
 # makefile
 .DEFAULT_GOAL := m
 # environment
-SYSTEMD_EXEC_PID = 302797
+SYSTEMD_EXEC_PID = 301341
 # environment
 DISPLAY = :0
 # environment
@@ -241,7 +241,7 @@ GDMSESSION = ubuntu
 # makefile (from 'Makefile', line 16)
 CC_FLAGS = -Wall -Werror -Wextra -g
 # variable set hash-table stats:
-# Load=115/1024=11%, Rehash=0, Collisions=15/175=9%
+# Load=115/1024=11%, Rehash=0, Collisions=15/169=9%
 
 # Pattern-specific Variable Values
 
@@ -249,11 +249,11 @@ CC_FLAGS = -Wall -Werror -Wextra -g
 
 # Directories
 
-# bonus (device 2048, inode 4317028): No files, no impossibilities so far.
-# . (device 2048, inode 9073323): 14 files, no impossibilities.
-# srcs (device 2048, inode 76956): 15 files, no impossibilities so far.
+# bonus (device 2048, inode 4317028): 11 files, no impossibilities so far.
+# . (device 2048, inode 9073323): 13 files, no impossibilities.
+# srcs (device 2048, inode 76956): 17 files, no impossibilities so far.
 
-# 29 files, no impossibilities in 3 directories.
+# 41 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -269,40 +269,78 @@ objs/bonus/%.o: bonus/%.c
 # Files
 
 # Not a target:
-objs/bonus/checker_rules_r.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+srcs/up_down.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 21:26:52.036997465
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/rules_sp.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 17:26:56.478267969
+#  File has been updated.
+#  Successfully updated.
+
+objs/bonus/checker_rules_r.o: bonus/checker_rules_r.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'checker_rules_r'
+#  Last modified 2024-05-07 12:29:31.013073
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 objs/:
 #  Implicit rule search has not been done.
-#  Last modified 2024-05-06 22:09:46.419748539
+#  Last modified 2024-05-07 12:29:30.91707149
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 54):
 	mkdir -p $(OBJ_DIR)
 
-# Not a target:
-objs/memory.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+objs/memory.o: srcs/memory.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'memory'
+ 
+#  Last modified 2024-05-07 12:29:30.789069476
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # Not a target:
 includes/checker.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 20:19:22.433943618
+#  File has been updated.
+#  Successfully updated.
+
+objs/rules_r.o: srcs/rules_r.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'rules_r'
+#  Last modified 2024-05-07 12:29:30.825070042
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # Not a target:
-objs/rules_r.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+bonus/checker_rules_r.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 12:55:23.170841806
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/rules_r.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 17:26:56.478267969
+#  File has been updated.
+#  Successfully updated.
 
 b: bonus
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -314,16 +352,26 @@ srcs/find_nums.c:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-objs/rules_rr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+objs/rules_rr.o: srcs/rules_rr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'rules_rr'
+#  Last modified 2024-05-07 12:29:30.837070232
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
 #  Last modified 2024-05-06 21:24:22.850903669
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/sort_first.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 21:27:59.509944528
 #  File has been updated.
 #  Successfully updated.
 
@@ -333,17 +381,34 @@ man: mandatory
 #  File does not exist.
 #  File has not been updated.
 
+# Not a target:
+srcs/rules_rr.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 17:26:56.478267969
+#  File has been updated.
+#  Successfully updated.
+
 bonus: checker
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 
+objs/bonus/checker.o: bonus/checker.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'checker'
+#  Last modified 2024-05-07 12:29:30.929071679
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
 # Not a target:
-objs/bonus/checker.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+srcs/merge_sort.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-07 12:12:18.380510645
+#  File has been updated.
+#  Successfully updated.
 
 mandatory: push_swap
 #  Phony target (prerequisite of .PHONY).
@@ -351,11 +416,14 @@ mandatory: push_swap
 #  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-objs/bonus/checker_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+objs/bonus/checker_utils.o: bonus/checker_utils.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'checker_utils'
+#  Last modified 2024-05-07 12:29:30.977072434
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -365,23 +433,46 @@ clean:
 #  recipe to execute (from 'Makefile', line 68):
 	rm -rf $(OBJ_DIR)
 
-# Not a target:
-objs/push_swap.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+objs/push_swap.o: srcs/push_swap.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'push_swap'
+#  Last modified 2024-05-07 12:29:30.813069853
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # Not a target:
-objs/bonus/checker_memory.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+srcs/utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 21:22:36.465410809
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-objs/sort_main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+bonus/checker_rules_rr.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 12:55:23.170841806
+#  File has been updated.
+#  Successfully updated.
+
+objs/bonus/checker_memory.o: bonus/checker_memory.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'checker_memory'
+#  Last modified 2024-05-07 12:29:30.989072623
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
+objs/sort_main.o: srcs/sort_main.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'sort_main'
+#  Last modified 2024-05-07 12:29:30.881070924
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -392,39 +483,66 @@ re: fclean all
 # Not a target:
 srcs/get_nums.c:
 #  Implicit rule search has been done.
-#  Last modified 2024-05-06 21:26:37.856798436
+#  Last modified 2024-05-07 12:22:42.730573439
 #  File has been updated.
 #  Successfully updated.
 
 objs/find_nums.o: srcs/find_nums.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'find_nums'
-#  Last modified 2024-05-06 21:46:33.470945755
+#  Last modified 2024-05-07 12:29:30.749068847
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
 	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
+# Not a target:
+bonus/checker_rules_sp.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 13:45:36.912204619
+#  File has been updated.
+#  Successfully updated.
 
 objs/cost_optimise.o: srcs/cost_optimise.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'cost_optimise'
-#  Last modified 2024-05-06 21:46:33.45894558
+#  Last modified 2024-05-07 12:29:30.737068658
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
+objs/merge_sort.o: srcs/merge_sort.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'merge_sort'
+#  Last modified 2024-05-07 12:29:30.801069665
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
 	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # Not a target:
-objs/merge_sort.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+bonus/checker_get_nums.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 19:20:03.277052738
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-objs/rules_sp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+bonus/checker_utils.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 20:16:23.69530794
+#  File has been updated.
+#  Successfully updated.
+
+objs/rules_sp.o: srcs/rules_sp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'rules_sp'
+#  Last modified 2024-05-07 12:29:30.84907042
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # Not a target:
 .DEFAULT:
@@ -438,9 +556,7 @@ all: push_swap checker
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -454,85 +570,98 @@ fclean: clean
 objs/lis.o: srcs/lis.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'lis'
-#  Last modified 2024-05-06 22:09:46.419748539
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := objs/lis.o
-# automatic
-# * := lis
-# automatic
-# < := srcs/lis.c
-# automatic
-# + := srcs/lis.c
-# automatic
-# % := 
-# automatic
-# ^ := srcs/lis.c
-# automatic
-# ? := srcs/lis.c
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=7/16=44%
-#  recipe to execute (from 'Makefile', line 51):
-	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
-
-# Not a target:
-objs/bonus/checker_get_nums.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-objs/bonus/checker_rules_rr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-push_swap: objs/ objs/cost.o objs/cost_optimise.o objs/find_nums.o objs/get_nums.o objs/lis.o objs/memory.o objs/merge_sort.o objs/push_swap.o objs/rules_r.o objs/rules_rr.o objs/rules_sp.o objs/sort_first.o objs/sort_main.o objs/up_down.o objs/utils.o includes/push_swap.h
-#  Implicit rule search has not been done.
-#  Last modified 2024-05-06 22:09:46.431748724
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
-#  recipe to execute (from 'Makefile', line 48):
-	@$(CC) $(OBJ_FILES) -o $(NAME)
-
-# Not a target:
-objs/bonus/checker_instructions.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-objs/cost.o: srcs/cost.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'cost'
-#  Last modified 2024-05-06 21:24:25.23093707
+#  Last modified 2024-05-07 12:29:30.773069225
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
 	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
+# Not a target:
+bonus/checker.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 19:20:10.437161751
+#  File has been updated.
+#  Successfully updated.
+
+objs/bonus/checker_get_nums.o: bonus/checker_get_nums.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'checker_get_nums'
+#  Last modified 2024-05-07 12:29:30.941071867
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
+# Not a target:
+srcs/sort_main.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 21:20:19.419488045
+#  File has been updated.
+#  Successfully updated.
+
+objs/bonus/checker_rules_rr.o: bonus/checker_rules_rr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'checker_rules_rr'
+ 
+#  Last modified 2024-05-07 12:29:30.965072246
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
+push_swap: objs/ objs/cost.o objs/cost_optimise.o objs/find_nums.o objs/get_nums.o objs/lis.o objs/memory.o objs/merge_sort.o objs/push_swap.o objs/rules_r.o objs/rules_rr.o objs/rules_sp.o objs/sort_first.o objs/sort_main.o objs/up_down.o objs/utils.o includes/push_swap.h
+#  Implicit rule search has not been done.
+#  Last modified 2024-05-07 12:30:10.87369959
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 48):
+	@$(CC) $(OBJ_FILES) -o $(NAME)
+
+objs/bonus/checker_instructions.o: bonus/checker_instructions.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'checker_instructions'
+#  Last modified 2024-05-07 12:29:31.001072812
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
+objs/cost.o: srcs/cost.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'cost'
+#  Last modified 2024-05-07 12:29:30.721068407
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
+# Not a target:
+srcs/memory.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-07 12:23:03.818913946
+#  File has been updated.
+#  Successfully updated.
+
 objs/bonus/:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2024-05-07 12:29:31.025073189
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 64):
 	mkdir -p $(BONUS_OBJ_DIR)
 
 checker: objs/bonus/ objs/bonus/checker.o objs/bonus/checker_get_nums.o objs/bonus/checker_merge_sort.o objs/bonus/checker_rules_rr.o objs/bonus/checker_utils.o objs/bonus/checker_memory.o objs/bonus/checker_instructions.o objs/bonus/checker_rules_r.o objs/bonus/checker_rules_sp.o includes/checker.h
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2024-05-07 12:29:31.037073378
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 58):
 	@$(CC) $(BONUS_OBJ_FILES) -o $(BONUS_NAME)
 
 # Not a target:
 srcs/lis.c:
 #  Implicit rule search has been done.
-#  Last modified 2024-05-06 22:16:20.769728088
+#  Last modified 2024-05-07 12:23:21.191193955
 #  File has been updated.
 #  Successfully updated.
 
@@ -543,22 +672,35 @@ srcs/cost.c:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-objs/bonus/checker_merge_sort.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+objs/bonus/checker_merge_sort.o: bonus/checker_merge_sort.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'checker_merge_sort'
+#  Last modified 2024-05-07 12:29:30.953072057
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
+objs/sort_first.o: srcs/sort_first.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'sort_first'
+#  Last modified 2024-05-07 12:29:30.865070672
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # Not a target:
-objs/sort_first.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+bonus/checker_instructions.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 19:22:12.439011246
+#  File has been updated.
+#  Successfully updated.
 
 objs/get_nums.o: srcs/get_nums.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'get_nums'
-#  Last modified 2024-05-06 21:46:33.486945989
+#  Last modified 2024-05-07 12:29:30.761069035
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -572,9 +714,17 @@ m: man
 
 # Not a target:
 includes/push_swap.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2024-05-07 12:30:02.941574978
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+bonus/checker_memory.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 19:22:58.247702208
+#  File has been updated.
+#  Successfully updated.
 
 .PHONY: all clean fclean re m man mandatory b bonus
 #  Implicit rule search has not been done.
@@ -588,38 +738,61 @@ srcs/cost_optimise.c:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-objs/up_down.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+objs/up_down.o: srcs/up_down.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'up_down'
+#  Last modified 2024-05-07 12:29:30.893071113
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
+
+objs/bonus/checker_rules_sp.o: bonus/checker_rules_sp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'checker_rules_sp'
+#  Last modified 2024-05-07 12:29:31.025073189
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 61):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # Not a target:
-objs/bonus/checker_rules_sp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+bonus/checker_merge_sort.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-06 12:55:23.170841806
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
-objs/utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+srcs/push_swap.c:
+#  Implicit rule search has been done.
+#  Last modified 2024-05-07 12:27:50.20348328
+#  File has been updated.
+#  Successfully updated.
+
+objs/utils.o: srcs/utils.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'utils'
+#  Last modified 2024-05-07 12:29:30.905071301
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 51):
+	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # files hash-table stats:
-# Load=48/1024=5%, Rehash=0, Collisions=2/128=2%
+# Load=67/1024=7%, Rehash=0, Collisions=11/204=5%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 82 / storage = 1051 B / avg = 12 B
-# current buf: size = 8162 B / used = 1051 B / count = 82 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 128 / storage = 1822 B / avg = 14 B
+# current buf: size = 8162 B / used = 1822 B / count = 128 / avg = 14 B
 
-# strcache performance: lookups = 134 / hit rate = 38%
+# strcache performance: lookups = 203 / hit rate = 36%
 # hash-table stats:
-# Load=82/8192=1%, Rehash=0, Collisions=1/134=1%
-# Finished Make data base on Tue May  7 11:47:19 2024
+# Load=128/8192=2%, Rehash=0, Collisions=3/203=1%
+# Finished Make data base on Tue May  7 12:30:25 2024
 
  

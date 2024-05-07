@@ -45,7 +45,7 @@ all: $(NAME) $(BONUS_NAME)
 
 
 $(NAME): $(OBJ_DIR) $(OBJ_FILES) $(INCLUDE_DIR)$(INCLUDE_FILE)
-	@$(CC) $(OBJ_FILES) -o $(NAME)
+	$(CC) $(OBJ_FILES) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
@@ -55,7 +55,7 @@ $(OBJ_DIR):
 
 
 $(BONUS_NAME): $(BONUS_OBJ_DIR) $(BONUS_OBJ_FILES) $(INCLUDE_DIR)$(BONUS_INCLUDE_FILE)
-	@$(CC) $(BONUS_OBJ_FILES) -o $(BONUS_NAME)
+	$(CC) $(BONUS_OBJ_FILES) -o $(BONUS_NAME)
 
 $(BONUS_OBJ_DIR)%.o: $(BONUS_DIR)%.c
 	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
