@@ -51,7 +51,6 @@ int	down_a_down_b_up(t_move *m, int b_len)
 	return (1);
 }
 
-
 int	down_a_up_b_down(t_move *m, int b_len)
 {
 	if (b_len < 2)

@@ -33,24 +33,12 @@ long int	ft_atoi(char *s)
 	{
 		res *= 10;
 		res += s[i++] - '0';
-		if (res > 2147483648)
-			return (ERROR);
 	}
 	if (neg)
 		res *= -1;
 	if (res < -2147483648 || res > 2147483647)
 		return (ERROR);
 	return (res);
-}
-
-void	init_stack(t_stack *stx, int argc)
-{
-	stx->a_len = 0;
-	stx->b_len = 0;
-	stx->a = ft_calloc(sizeof(int), (argc));
-	stx->b = ft_calloc(sizeof(int), (argc));
-	stx->sorted = ft_calloc(sizeof(int), argc);
-	stx->total_nums = argc - 1;
 }
 
 int	ft_check_dupes(int *nums, int len)

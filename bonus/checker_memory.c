@@ -12,38 +12,33 @@
 
 #include "checker.h"
 
-int	compare(char *s1, char *s2)
+void	free_list(t_cmd *list)
 {
-	int	i;
+	t_cmd	*tmp;
 
-	i = 0;
-	while (s1[i] && s2[i])
+	while (list)
 	{
-		if (s1[i] != s2[i])
-			return (1);
-		i++;
+		tmp = list->next;
+		free (list->str);
+		free (list);
+		list = tmp;
 	}
-	if (s1[i] == s2[i])
-		return (0);
-	return (1);
 }
 
-int	main(int argc, char **argv)
+void	init_stack(t_stack *stx, int argc)
 {
-	t_stack	stx;
+	stx->a_len = 0;
+	stx->b_len = 0;
+	stx->a = ft_calloc(sizeof(int), (argc));
+	stx->b = ft_calloc(sizeof(int), (argc));
+	stx->sorted = ft_calloc(sizeof(int), argc);
+	stx->total_nums = argc - 1;
+}
 
-	if (argc == 1)
-		exit (0);
-	stx.list = get_instructions ();
-	get_nums(argc, argv, &stx);
-	check_result(&stx);
-	if (ft_sorted(&stx))
-	{
-		putstr("OK\n");
-		free_stack(&stx);
-		exit (0);
-	}
-	putstr("KO\n");
-	free_stack(&stx);
-	return (1);
+void	clear_and_exit(char *str, t_cmd *head)
+{
+	free (str);
+	free_list(head);
+	putstr("Error\n");
+	exit(1);
 }

@@ -39,7 +39,7 @@ int	good_instruction(char *str)
 	return (0);
 }
 
-char *gnl(void)
+char	*gnl(void)
 {
 	char	*res;
 	int		i;
@@ -60,7 +60,7 @@ char *gnl(void)
 	return (NULL);
 }
 
-t_cmd	*get_instructions (void)
+t_cmd	*get_instructions(void)
 {
 	t_cmd	*prev;
 	t_cmd	*current;
@@ -69,15 +69,11 @@ t_cmd	*get_instructions (void)
 
 	prev = NULL;
 	head = NULL;
-	while ((str = gnl()))
+	str = gnl ();
+	while (str)
 	{
 		if (!good_instruction(str))
-		{
-			free (str);
-			free_list(head);
-			putstr("Error\n");
-			exit(1);
-		}
+			clear_and_exit(str, head);
 		current = malloc(sizeof(t_cmd));
 		if (!head)
 			head = current;
@@ -86,6 +82,7 @@ t_cmd	*get_instructions (void)
 		current->str = str;
 		current->next = NULL;
 		prev = current;
+		str = gnl ();
 	}
 	return (head);
 }

@@ -12,50 +12,30 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_bzero(void *dst, int n)
+int	min(int a, int b)
 {
-	unsigned char	*d;
-	int				i;
-
-	i = 0;
-	d = (unsigned char *)dst;
-	while (i < n)
-	{
-		d[i] = 0;
-		i++;
-	}
+	if (a <= b)
+		return (a);
+	return (b);
 }
 
-int	find_low(t_stack *stx)
+int	max(int a, int b)
 {
-	int	i;
-	int	low;
-
-	i = 0;
-	low = 0;
-	while (i < stx->a_len)
-	{
-		if (stx->a[i] < stx->a[low])
-			low = i;
-		i++;
-	}
-	return (low);
+	if (a > b)
+		return (a);
+	return (b);
 }
 
-int	ft_sorted(t_stack *stx)
+void	putstr(char *str)
 {
 	int	i;
 
-	i = 1;
-	while (i < stx->a_len)
+	i = 0;
+	while (str[i])
 	{
-		if (stx->a[i] > stx->a[i - 1])
-		{
-			return (0);
-		}
+		write(1, &str[i], 1);
 		i++;
 	}
-	return (1);
 }
 
 int	in_set(int target, int *set, int size)
@@ -70,26 +50,4 @@ int	in_set(int target, int *set, int size)
 		i++;
 	}
 	return (0);
-}
-
-void	*ft_calloc(int nmemb, int size)
-{
-	void	*buf;
-	int		t_size;
-
-	t_size = nmemb * size;
-	if (nmemb == 0 || size == 0)
-	{
-		buf = malloc(0);
-		return (buf);
-	}
-	if (INT_MAX / nmemb < size)
-	{
-		return (0);
-	}
-	buf = malloc(t_size);
-	if (!buf)
-		return (NULL);
-	ft_bzero(buf, t_size);
-	return (buf);
 }

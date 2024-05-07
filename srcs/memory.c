@@ -1,16 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_get_nums.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samoore <samoore@student.42london.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 17:24:49 by samoore           #+#    #+#             */
-/*   Updated: 2023/12/19 14:47:22 by samoore          ###   ########.fr       */
+/*   Created: 2023/12/15 07:29:18 by samoore           #+#    #+#             */
+/*   Updated: 2023/12/19 14:46:25 by samoore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../includes/push_swap.h"
+
+void	init_stack(t_stack *stx, int argc)
+{
+	stx->a_len = 0;
+	stx->b_len = 0;
+	stx->moves = 0;
+	stx->a = ft_calloc(sizeof(int), (argc));
+	stx->b = ft_calloc(sizeof(int), (argc));
+	stx->sorted = ft_calloc(sizeof(int), argc);
+	stx->total_nums = argc - 1;
+	stx->lis = NULL;
+	stx->nums_to_split = NULL;
+}
+
+void	free_stack(t_stack *stx)
+{
+	if (stx->a)
+		free (stx->a);
+	if (stx->b)
+		free (stx->b);
+	if (stx->sorted)
+		free (stx->sorted);
+	if (stx->lis)
+		free (stx->lis);
+	if (stx->nums_to_split)
+		free (stx->nums_to_split);
+}
 
 void	ft_bzero(void *dst, int n)
 {
@@ -24,22 +51,6 @@ void	ft_bzero(void *dst, int n)
 		d[i] = 0;
 		i++;
 	}
-}
-
-int	ft_sorted(t_stack *stx)
-{
-	int	i;
-
-	i = 1;
-	while (i < stx->a_len)
-	{
-		if (stx->a[i] > stx->a[i - 1])
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
 }
 
 void	*ft_calloc(int nmemb, int size)
@@ -64,21 +75,16 @@ void	*ft_calloc(int nmemb, int size)
 	return (buf);
 }
 
-void	free_stack(t_stack *stx)
-{
-	free (stx->a);
-	free (stx->b);
-	free (stx->sorted);
-}
-
-void	putstr(char *str)
+void	free_helpers(t_stack *stx, int **res, int **lis)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (i < stx->a_len)
 	{
-		write(1, &str[i], 1);
-		i++;
+		free (res[i]);
+		free (lis[i++]);
 	}
+	free (res);
+	free (lis);
 }

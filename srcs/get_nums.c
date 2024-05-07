@@ -33,36 +33,26 @@ long int	ft_atoi(char *s)
 	{
 		res *= 10;
 		res += s[i++] - '0';
-		if (res > 214748648)
-			return (ERROR);
 	}
 	if (neg)
 		res *= -1;
 	if (res < -2147483648 || res > 2147483647)
-			return (ERROR);
+		return (ERROR);
 	return (res);
-}
-
-void	init_stack(t_stack *stx, int argc)
-{
-	stx->a_len = 0;
-	stx->b_len = 0;
-	stx->moves = 0;
-	stx->a = ft_calloc(sizeof(int), (argc));
-	stx->b = ft_calloc(sizeof(int), (argc));
-	stx->sorted = ft_calloc(sizeof(int), argc);
-	stx->total_nums = argc - 1;
 }
 
 void	make_helper_arrays(t_stack *stx)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	ft_make_sorted(stx, &stx->sorted, stx->a_len - 1);
+	if (stx->a_len <= 3)
+		return ;
 	get_lis(stx);
 	stx->nums_to_split_len = 0;
-	stx->nums_to_split = malloc(sizeof(int) * (stx->total_nums - stx->lis_len));
+	stx->nums_to_split = ft_calloc (sizeof(int),
+			max(1, (stx->total_nums - stx->lis_len)));
 	while (i < stx->total_nums)
 	{
 		if (!in_set(stx->a[i], stx->lis, stx->lis_len))
@@ -81,9 +71,7 @@ void	get_nums(int argc, char **argv, t_stack *stx)
 	i = 1;
 	while (i < argc)
 	{
-		t = ft_atoi(argv[i]);		{
-			
-		}
+		t = ft_atoi(argv[i]);
 		if (t == ERROR)
 		{
 			printf("Error\n");

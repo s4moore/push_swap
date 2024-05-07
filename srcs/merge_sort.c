@@ -92,7 +92,7 @@ void	ft_make_sorted(t_stack *stx, int **array, int len)
 	stx->sorted_len = stx->a_len;
 	if (ft_check_dupes(stx->sorted, stx->a_len))
 	{
-		printf("Error");
+		printf("Error\n");
 		free_stack(stx);
 		exit (1);
 	}

@@ -1,47 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils_2.c                                :+:      :+:    :+:   */
+/*   push_swap_utils_3.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: samoore <samoore@student.42london.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 12:54:37 by samoore           #+#    #+#             */
-/*   Updated: 2023/12/19 14:47:48 by samoore          ###   ########.fr       */
+/*   Created: 2023/12/18 18:56:14 by samoore           #+#    #+#             */
+/*   Updated: 2023/12/19 17:04:43 by samoore          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	min(int a, int b)
+void	up_up(t_stack *stx)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
-
-int	max(int a, int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
-
-void	free_stack(t_stack *stx)
-{
-	free (stx->a);
-	free (stx->b);
-	free (stx->sorted);
-}
-
-void	putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (stx->move_a > stx->move_b)
 	{
-		write(1, &str[i], 1);
-		i++;
+		ra(stx);
+		stx->move_a -= 1;
+	}
+	while (stx->move_b > stx->move_a)
+	{
+		rb(stx);
+		stx->move_b -= 1;
+	}
+	while (stx->move_a > 0)
+	{
+		rr(stx);
+		stx->move_a -= 1;
+		stx->move_b -= 1;
+	}
+}
+
+void	down_down(t_stack *stx)
+{
+	while (stx->move_a > stx->move_b)
+	{
+		rra(stx);
+		stx->move_a -= 1;
+	}
+	while (stx->move_b > stx->move_a)
+	{
+		rrb(stx);
+		stx->move_b -= 1;
+	}
+	while (stx->move_a > 0)
+	{
+		rrr(stx);
+		stx->move_a -= 1;
+		stx->move_b -= 1;
 	}
 }
 

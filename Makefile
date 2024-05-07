@@ -15,12 +15,12 @@ NAME = push_swap
 BONUS_NAME = checker
 CC_FLAGS = -Wall -Werror -Wextra -g
 
-SRC_FILES = checker.c  cost.c  get_nums.c  lis.c  merge_sort.c  pre_sort.c \
-			push_swap.c  rules_r.c  rules_rr.c  rules_sp.c  utils_2.c  \
-			utils_3.c  utils_4.c  utils.c
+SRC_FILES = cost.c  cost_optimise.c  find_nums.c  get_nums.c  lis.c \
+			memory.c  merge_sort.c  push_swap.c  rules_r.c  rules_rr.c \
+			rules_sp.c  sort_first.c  sort_main.c  up_down.c  utils.c
 
 BONUS_FILES = checker.c  checker_get_nums.c checker_merge_sort.c \
-			  checker_rules_rr.c checker_utils.c \
+			  checker_rules_rr.c checker_utils.c checker_memory.c \
 			  checker_instructions.c checker_rules_r.c checker_rules_sp.c
 
 OBJ_FILES = $(patsubst %.c, $(OBJ_DIR)%.o, $(SRC_FILES))
