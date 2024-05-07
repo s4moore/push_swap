@@ -37,6 +37,14 @@ void	smallest_to_top(t_stack *stx)
 			ra(stx);
 }
 
+void	quick_sort(t_stack *stx)
+{
+	pb(stx);
+	pb(stx);
+	if (!ft_nearly_sorted(stx))
+		sa(stx);
+}
+
 void	sort_nums(t_stack *stx)
 {
 	if (ft_sorted(stx))
@@ -47,7 +55,10 @@ void	sort_nums(t_stack *stx)
 	stx->moves = 0;
 	if (stx->total_nums > 3)
 	{
-		ft_pre_sort(stx);
+		if (stx->a_len > 5)
+			ft_pre_sort(stx);
+		else
+			quick_sort(stx);
 		ft_sort(stx);
 	}
 	else
@@ -60,10 +71,7 @@ int	main(int argc, char **argv)
 	t_stack	stx;
 
 	if (argc == 1)
-	{
-		putstr("Error\n");
 		exit (1);
-	}
 	get_nums(argc, argv, &stx);
 	sort_nums(&stx);
 	smallest_to_top(&stx);

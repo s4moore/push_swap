@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May  7 12:30:25 2024
+# Make data base, printed on Tue May  7 12:37:12 2024
 
 # Variables
 
@@ -97,7 +97,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 310928
+VSCODE_PID = 311896
 # environment
 KRB5CCNAME = FILE:/tmp/krb5cc_101194_9focOg
 # environment
@@ -285,15 +285,16 @@ srcs/rules_sp.c:
 objs/bonus/checker_rules_r.o: bonus/checker_rules_r.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checker_rules_r'
-#  Last modified 2024-05-07 12:29:31.013073
+#  Last modified 2024-05-07 12:31:29.578933873
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 61):
+ 
 	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 objs/:
 #  Implicit rule search has not been done.
-#  Last modified 2024-05-07 12:29:30.91707149
+#  Last modified 2024-05-07 12:31:29.48293237
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 54):
@@ -302,8 +303,7 @@ objs/:
 objs/memory.o: srcs/memory.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'memory'
- 
-#  Last modified 2024-05-07 12:29:30.789069476
+#  Last modified 2024-05-07 12:31:29.358930428
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -319,7 +319,7 @@ includes/checker.h:
 objs/rules_r.o: srcs/rules_r.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'rules_r'
-#  Last modified 2024-05-07 12:29:30.825070042
+#  Last modified 2024-05-07 12:31:29.398931054
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -355,7 +355,7 @@ srcs/find_nums.c:
 objs/rules_rr.o: srcs/rules_rr.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'rules_rr'
-#  Last modified 2024-05-07 12:29:30.837070232
+#  Last modified 2024-05-07 12:31:29.410931242
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -364,7 +364,7 @@ objs/rules_rr.o: srcs/rules_rr.c
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2024-05-06 21:24:22.850903669
+#  Last modified 2024-05-07 12:30:35.682089041
 #  File has been updated.
 #  Successfully updated.
 
@@ -397,7 +397,7 @@ bonus: checker
 objs/bonus/checker.o: bonus/checker.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checker'
-#  Last modified 2024-05-07 12:29:30.929071679
+#  Last modified 2024-05-07 12:31:29.494932558
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 61):
@@ -419,7 +419,7 @@ mandatory: push_swap
 objs/bonus/checker_utils.o: bonus/checker_utils.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checker_utils'
-#  Last modified 2024-05-07 12:29:30.977072434
+#  Last modified 2024-05-07 12:31:29.54293331
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 61):
@@ -436,7 +436,7 @@ clean:
 objs/push_swap.o: srcs/push_swap.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'push_swap'
-#  Last modified 2024-05-07 12:29:30.813069853
+#  Last modified 2024-05-07 12:31:29.386930867
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -459,7 +459,7 @@ bonus/checker_rules_rr.c:
 objs/bonus/checker_memory.o: bonus/checker_memory.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checker_memory'
-#  Last modified 2024-05-07 12:29:30.989072623
+#  Last modified 2024-05-07 12:31:29.554933498
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 61):
@@ -468,7 +468,7 @@ objs/bonus/checker_memory.o: bonus/checker_memory.c
 objs/sort_main.o: srcs/sort_main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'sort_main'
-#  Last modified 2024-05-07 12:29:30.881070924
+#  Last modified 2024-05-07 12:31:29.446931806
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -490,7 +490,7 @@ srcs/get_nums.c:
 objs/find_nums.o: srcs/find_nums.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'find_nums'
-#  Last modified 2024-05-07 12:29:30.749068847
+#  Last modified 2024-05-07 12:31:29.318929802
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -506,7 +506,7 @@ bonus/checker_rules_sp.c:
 objs/cost_optimise.o: srcs/cost_optimise.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'cost_optimise'
-#  Last modified 2024-05-07 12:29:30.737068658
+#  Last modified 2024-05-07 12:31:29.306929614
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -515,7 +515,7 @@ objs/cost_optimise.o: srcs/cost_optimise.c
 objs/merge_sort.o: srcs/merge_sort.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'merge_sort'
-#  Last modified 2024-05-07 12:29:30.801069665
+#  Last modified 2024-05-07 12:31:29.374930679
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -538,7 +538,7 @@ bonus/checker_utils.c:
 objs/rules_sp.o: srcs/rules_sp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'rules_sp'
-#  Last modified 2024-05-07 12:29:30.84907042
+#  Last modified 2024-05-07 12:31:29.42293143
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -570,9 +570,10 @@ fclean: clean
 objs/lis.o: srcs/lis.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'lis'
-#  Last modified 2024-05-07 12:29:30.773069225
+#  Last modified 2024-05-07 12:31:29.34693024
 #  File has been updated.
 #  Successfully updated.
+ 
 #  recipe to execute (from 'Makefile', line 51):
 	$(CC) $(CC_FLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
@@ -586,7 +587,7 @@ bonus/checker.c:
 objs/bonus/checker_get_nums.o: bonus/checker_get_nums.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checker_get_nums'
-#  Last modified 2024-05-07 12:29:30.941071867
+#  Last modified 2024-05-07 12:31:29.506932746
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 61):
@@ -602,8 +603,7 @@ srcs/sort_main.c:
 objs/bonus/checker_rules_rr.o: bonus/checker_rules_rr.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checker_rules_rr'
- 
-#  Last modified 2024-05-07 12:29:30.965072246
+#  Last modified 2024-05-07 12:31:29.530933122
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 61):
@@ -611,16 +611,16 @@ objs/bonus/checker_rules_rr.o: bonus/checker_rules_rr.c
 
 push_swap: objs/ objs/cost.o objs/cost_optimise.o objs/find_nums.o objs/get_nums.o objs/lis.o objs/memory.o objs/merge_sort.o objs/push_swap.o objs/rules_r.o objs/rules_rr.o objs/rules_sp.o objs/sort_first.o objs/sort_main.o objs/up_down.o objs/utils.o includes/push_swap.h
 #  Implicit rule search has not been done.
-#  Last modified 2024-05-07 12:30:10.87369959
+#  Last modified 2024-05-07 12:31:29.48293237
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 48):
-	@$(CC) $(OBJ_FILES) -o $(NAME)
+	$(CC) $(OBJ_FILES) -o $(NAME)
 
 objs/bonus/checker_instructions.o: bonus/checker_instructions.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checker_instructions'
-#  Last modified 2024-05-07 12:29:31.001072812
+#  Last modified 2024-05-07 12:31:29.566933685
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 61):
@@ -629,7 +629,7 @@ objs/bonus/checker_instructions.o: bonus/checker_instructions.c
 objs/cost.o: srcs/cost.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'cost'
-#  Last modified 2024-05-07 12:29:30.721068407
+#  Last modified 2024-05-07 12:31:29.294929426
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -644,7 +644,7 @@ srcs/memory.c:
 
 objs/bonus/:
 #  Implicit rule search has not been done.
-#  Last modified 2024-05-07 12:29:31.025073189
+#  Last modified 2024-05-07 12:31:29.590934061
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 64):
@@ -652,11 +652,11 @@ objs/bonus/:
 
 checker: objs/bonus/ objs/bonus/checker.o objs/bonus/checker_get_nums.o objs/bonus/checker_merge_sort.o objs/bonus/checker_rules_rr.o objs/bonus/checker_utils.o objs/bonus/checker_memory.o objs/bonus/checker_instructions.o objs/bonus/checker_rules_r.o objs/bonus/checker_rules_sp.o includes/checker.h
 #  Implicit rule search has not been done.
-#  Last modified 2024-05-07 12:29:31.037073378
+#  Last modified 2024-05-07 12:31:29.602934249
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 58):
-	@$(CC) $(BONUS_OBJ_FILES) -o $(BONUS_NAME)
+	$(CC) $(BONUS_OBJ_FILES) -o $(BONUS_NAME)
 
 # Not a target:
 srcs/lis.c:
@@ -675,7 +675,7 @@ srcs/cost.c:
 objs/bonus/checker_merge_sort.o: bonus/checker_merge_sort.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checker_merge_sort'
-#  Last modified 2024-05-07 12:29:30.953072057
+#  Last modified 2024-05-07 12:31:29.518932934
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 61):
@@ -684,7 +684,7 @@ objs/bonus/checker_merge_sort.o: bonus/checker_merge_sort.c
 objs/sort_first.o: srcs/sort_first.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'sort_first'
-#  Last modified 2024-05-07 12:29:30.865070672
+#  Last modified 2024-05-07 12:31:29.434931618
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -700,7 +700,7 @@ bonus/checker_instructions.c:
 objs/get_nums.o: srcs/get_nums.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'get_nums'
-#  Last modified 2024-05-07 12:29:30.761069035
+#  Last modified 2024-05-07 12:31:29.334930052
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -741,7 +741,7 @@ srcs/cost_optimise.c:
 objs/up_down.o: srcs/up_down.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'up_down'
-#  Last modified 2024-05-07 12:29:30.893071113
+#  Last modified 2024-05-07 12:31:29.458931994
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -750,7 +750,7 @@ objs/up_down.o: srcs/up_down.c
 objs/bonus/checker_rules_sp.o: bonus/checker_rules_sp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'checker_rules_sp'
-#  Last modified 2024-05-07 12:29:31.025073189
+#  Last modified 2024-05-07 12:31:29.590934061
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 61):
@@ -773,7 +773,7 @@ srcs/push_swap.c:
 objs/utils.o: srcs/utils.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'utils'
-#  Last modified 2024-05-07 12:29:30.905071301
+#  Last modified 2024-05-07 12:31:29.470932182
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 51):
@@ -793,6 +793,6 @@ objs/utils.o: srcs/utils.c
 # strcache performance: lookups = 203 / hit rate = 36%
 # hash-table stats:
 # Load=128/8192=2%, Rehash=0, Collisions=3/203=1%
-# Finished Make data base on Tue May  7 12:30:25 2024
+# Finished Make data base on Tue May  7 12:37:12 2024
 
  

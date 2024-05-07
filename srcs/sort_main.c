@@ -23,8 +23,11 @@ int	ft_nearly_sorted(t_stack *stx)
 		i = 0;
 	while (i != j)
 	{
-		if (i > 0 && stx->a[i] > stx->a[i - 1])
-			return (0);
+		if (i > 0)
+		{
+			if (stx->a[i] > stx->a[i - 1])
+				return (0);
+		}
 		else if (stx->a[i] > stx->a[stx->a_len - 1])
 			return (0);
 		i++;
