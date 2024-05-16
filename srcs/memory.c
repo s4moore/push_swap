@@ -20,9 +20,10 @@ void	init_stack(t_stack *stx, int argc)
 	stx->a = ft_calloc(sizeof(int), (argc));
 	stx->b = ft_calloc(sizeof(int), (argc));
 	stx->sorted = ft_calloc(sizeof(int), argc);
+	stx->nums = ft_calloc(sizeof(int), (argc));
 	stx->total_nums = argc - 1;
 	stx->lis = NULL;
-	stx->nums_to_split = NULL;
+	stx->split_nums = NULL;
 }
 
 void	free_stack(t_stack *stx)
@@ -35,8 +36,10 @@ void	free_stack(t_stack *stx)
 		free (stx->sorted);
 	if (stx->lis)
 		free (stx->lis);
-	if (stx->nums_to_split)
-		free (stx->nums_to_split);
+	if (stx->split_nums)
+		free (stx->split_nums);
+	if (stx->nums)
+		free (stx->nums);
 }
 
 void	ft_bzero(void *dst, int n)

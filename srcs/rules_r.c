@@ -29,7 +29,8 @@ The first element becomes the last one.*/
 		i--;
 	}
 	stx->a[i] = swap;
-	putstr("ra\n");
+	if (stx->final)
+		putstr("ra\n");
 	stx->moves++;
 }
 
@@ -50,7 +51,8 @@ The first element becomes the last one.*/
 		i--;
 	}
 	stx->b[i] = swap;
-	putstr("rb\n");
+	if (stx->final)
+		putstr("rb\n");
 	stx->moves++;
 }
 
@@ -70,7 +72,8 @@ void	rr(t_stack *stx)
 		i--;
 	}
 	stx->a[i] = swap;
-	putstr("rr\n");
+	if (stx->final)
+		putstr("rr\n");
 	i = stx->b_len - 1;
 	swap = stx->b[i];
 	while (i > 0)

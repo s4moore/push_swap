@@ -34,8 +34,8 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		exit (0);
-	stx.list = get_instructions ();
 	get_nums(argc, argv, &stx);
+	stx.list = get_instructions ();
 	check_result(&stx);
 	if (ft_sorted(&stx))
 	{

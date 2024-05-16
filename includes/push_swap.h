@@ -32,12 +32,13 @@ typedef struct s_stack
 	int	sorted_len;
 	int	*lis;
 	int	lis_len;
-	int	*nums_to_split;
-	int	nums_to_split_len;
+	int	*split_nums;
+	int	*nums;
+	int	split_nums_len;
 	int	total_nums;
+	int	final;
 	int	moves;
 	int	lowest;
-	int	highest;
 	int	max_p;
 	int	i;
 	int	j;
@@ -59,12 +60,14 @@ typedef struct s_move
 }	t_move;
 
 void	check_cost(t_stack *stx, int j, t_move *mov);
+void	copy_nums(t_stack *stx);
 int		down_a_down_b_up(t_move *m, int b_len);
 int		down_a_up_b_down(t_move *m, int b_len);
 void	down_down(t_stack *stx);
 void	find_best(t_stack *stx, t_move *mov);
 int		find_low(t_stack *stx);
-void	ft_pre_sort(t_stack *stx);
+void	ft_pre_sort_a(t_stack *stx);
+void	ft_pre_sort_b(t_stack *stx);
 int		ft_nearly_sorted(t_stack *stx);
 void	ft_sort(t_stack *stx);
 int		find_high(t_stack *stx);

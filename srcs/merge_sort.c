@@ -88,7 +88,6 @@ void	ft_make_sorted(t_stack *stx, int **array, int len)
 {
 	merge_sort(*array, 0, len);
 	stx->lowest = stx->sorted[0];
-	stx->highest = stx->sorted[stx->a_len - 1];
 	stx->sorted_len = stx->a_len;
 	if (ft_check_dupes(stx->sorted, stx->a_len))
 	{

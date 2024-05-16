@@ -12,16 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-void	print_arr(int *arr, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len)
-		printf("%d ", arr[i++]);
-	printf ("\n");
-}
-
 void	smallest_to_top(t_stack *stx)
 {
 	int	i;
@@ -39,27 +29,48 @@ void	smallest_to_top(t_stack *stx)
 
 void	quick_sort(t_stack *stx)
 {
-	pb(stx);
-	pb(stx);
+	while (stx->a_len > 3)
+		pb(stx);
 	if (!ft_nearly_sorted(stx))
 		sa(stx);
 }
 
+void	choose_and_sort(t_stack *stx)
+{
+	int	a;
+	int	b;
+
+	stx->final = 0;
+	ft_pre_sort_a(stx);
+	ft_sort(stx);
+	a = stx->moves;
+	stx->moves = 0;
+	copy_nums(stx);
+	ft_pre_sort_b(stx);
+	ft_sort(stx);
+	b = stx->moves;
+	copy_nums(stx);
+	stx->final = 1;
+	if (a < b)
+		ft_pre_sort_a(stx);
+	else
+		ft_pre_sort_b(stx);
+	ft_sort(stx);
+}
+
 void	sort_nums(t_stack *stx)
 {
-	if (ft_sorted(stx))
-	{
-		free_stack(stx);
-		exit (0);
-	}
 	stx->moves = 0;
+	stx->final = 1;
 	if (stx->total_nums > 3)
 	{
-		if (stx->a_len > 5)
-			ft_pre_sort(stx);
-		else
+		if (stx->a_len <= 5)
+		{
 			quick_sort(stx);
-		ft_sort(stx);
+			ft_sort(stx);
+		}
+		else
+			choose_and_sort(stx);
 	}
 	else
 		if (!ft_nearly_sorted(stx))
@@ -73,6 +84,11 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		exit (1);
 	get_nums(argc, argv, &stx);
+	if (ft_sorted(&stx))
+	{
+		free_stack(&stx);
+		exit (0);
+	}
 	sort_nums(&stx);
 	smallest_to_top(&stx);
 	free_stack(&stx);

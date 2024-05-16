@@ -41,6 +41,20 @@ long int	ft_atoi(char *s)
 	return (res);
 }
 
+void	copy_nums(t_stack *stx)
+{
+	int	i;
+
+	i = 0;
+	free (stx->a);
+	stx->a = ft_calloc(stx->total_nums, sizeof(int));
+	while (i < stx->total_nums)
+	{
+		stx->a[i] = stx->nums[i];
+		i++;
+	}
+}
+
 void	make_helper_arrays(t_stack *stx)
 {
 	int	i;
@@ -50,16 +64,16 @@ void	make_helper_arrays(t_stack *stx)
 	if (stx->a_len <= 3)
 		return ;
 	get_lis(stx);
-	stx->nums_to_split_len = 0;
-	stx->nums_to_split = ft_calloc (sizeof(int),
+	stx->split_nums_len = 0;
+	stx->split_nums = ft_calloc (sizeof(int),
 			max(1, (stx->total_nums - stx->lis_len)));
 	while (i < stx->total_nums)
 	{
 		if (!in_set(stx->a[i], stx->lis, stx->lis_len))
-			stx->nums_to_split[stx->nums_to_split_len++] = stx->a[i];
+			stx->split_nums[stx->split_nums_len++] = stx->a[i];
 		i++;
 	}
-	ft_make_sorted(stx, &stx->nums_to_split, stx->nums_to_split_len - 1);
+	ft_make_sorted(stx, &stx->split_nums, stx->split_nums_len - 1);
 }
 
 void	get_nums(int argc, char **argv, t_stack *stx)
@@ -79,6 +93,7 @@ void	get_nums(int argc, char **argv, t_stack *stx)
 			exit (2);
 		}
 		stx->a[argc - i - 1] = (int)t;
+		stx->nums[argc - i - 1] = (int)t;
 		stx->a_len++;
 		stx->sorted[argc - i++ - 1] = (int)t;
 	}

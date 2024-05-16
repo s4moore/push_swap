@@ -23,7 +23,8 @@ Do nothing if there is only one or no elements. */
 	swap = stx->a[stx->a_len - 1];
 	stx->a[stx->a_len - 1] = stx->a[stx->a_len - 2];
 	stx->a[stx->a_len - 2] = swap;
-	putstr("sa\n");
+	if (stx->final)
+		putstr("sa\n");
 	stx->moves++;
 }
 
@@ -38,7 +39,8 @@ Do nothing if there is only one or no elements.*/
 	swap = stx->b[stx->b_len - 1];
 	stx->b[stx->b_len - 1] = stx->b[stx->b_len - 2];
 	stx->b[stx->b_len - 2] = swap;
-	putstr("sb\n");
+	if (stx->final)
+		putstr("sb\n");
 	stx->moves++;
 }
 
@@ -56,7 +58,8 @@ void	ss(t_stack *stx)
 	stx->b[stx->b_len - 1] = stx->b[stx->b_len - 2];
 	stx->b[stx->b_len - 2] = swap;
 	stx->moves++;
-	putstr("ss\n");
+	if (stx->final)
+		putstr("ss\n");
 }
 
 void	pa(t_stack *stx)
@@ -68,7 +71,8 @@ Do nothing if b is empty*/
 	stx->a[stx->a_len] = stx->b[stx->b_len - 1];
 	stx->b_len--;
 	stx->a_len++;
-	putstr("pa\n");
+	if (stx->final)
+		putstr("pa\n");
 	stx->moves++;
 }
 
@@ -82,5 +86,6 @@ Do nothing if a is empty*/
 	stx->a_len--;
 	stx->b_len++;
 	stx->moves++;
-	putstr("pb\n");
+	if (stx->final)
+		putstr("pb\n");
 }

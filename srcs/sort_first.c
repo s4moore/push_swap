@@ -23,44 +23,71 @@ void	sort_last(t_stack *stx)
 	}
 }
 
-int	get_low_nums(t_stack *stx)
-{
-	int	i;
-	int	res;
+// int	get_low_nums(t_stack *stx)
+// {
+// 	int	i;
+// 	int	res;
 
-	i = 0;
-	res = 0;
-	while (i < stx->nums_to_split_len)
-	{
-		if (find_pos(stx->sorted, stx->nums_to_split[i], stx->sorted_len)
-			> stx->total_nums - (stx->total_nums / 3))
-			res++;
-		i++;
-	}
-	return (res);
-}
+// 	i = 0;
+// 	res = 0;
+// 	while (i < stx->split_nums_len)
+// 	{
+// 		if (find_pos(stx->sorted, stx->split_nums[i], stx->sorted_len)
+// 			< stx->total_nums - (stx->total_nums / 3))
+// 			res++;
+// 		i++;
+// 	}
+// 	return (res);
+// }
 
-void	ft_pre_sort(t_stack *stx)
+void	ft_pre_sort_a(t_stack *stx)
 {
 	int	sort_pos;
-	int	low_nums;
+	int	nums_div_3;
 
-	low_nums = get_low_nums(stx);
-	while (stx->a_len > stx->lis_len + low_nums)
+	nums_div_3 = stx->split_nums_len / 3;
+	while (stx->a_len > (stx->lis_len + nums_div_3))
 	{
 		if (in_set(top(stx), stx->lis, stx->lis_len))
 		{
 			ra(stx);
 			continue ;
 		}
-		sort_pos = find_pos(stx->sorted, top(stx), stx->sorted_len);
-		if (sort_pos < stx->sorted_len / 3)
+		sort_pos = find_pos(stx->split_nums, top(stx), stx->split_nums_len);
+		if (sort_pos < stx->split_nums_len / 3)
+			ra (stx);
+		else if (sort_pos > (stx->split_nums_len - (stx->split_nums_len / 3)))
+		{
+			pb (stx);
+			rb (stx);
+		}
+		else
+			pb(stx);
+	}
+	sort_last(stx);
+}
+
+void	ft_pre_sort_b(t_stack *stx)
+{
+	int	sort_pos;
+
+	while (stx->a_len > (stx->lis_len + stx->split_nums_len / 3))
+	{
+		if (in_set(top(stx), stx->lis, stx->lis_len))
+		{
+			ra(stx);
+			continue ;
+		}
+		sort_pos = find_pos(stx->split_nums, top(stx), stx->split_nums_len);
+		if (sort_pos < stx->split_nums_len / 3)
 		{
 			pb(stx);
 			rb(stx);
 		}
-		else if (sort_pos > (stx->sorted_len - (stx->sorted_len / 3)))
+		else if (sort_pos > (stx->split_nums_len - (stx->split_nums_len / 3)))
+		{
 			ra(stx);
+		}
 		else
 			pb(stx);
 	}
