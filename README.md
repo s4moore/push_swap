@@ -1,30 +1,34 @@
 This is my code for the 42 project, push_swap.
 
-I've tried a few different approaches already but this one is the best (least number of operations required) so far.
-Still going to play around a bit as there are a few things that don't work as expected but the code does work overall.
+Final score: 125/100
 
-Number of instructions to sort:
-3 : 2
-5 : 7-11
-100 : 570 - 680
-500 : 4800 - 5400
+The aim of the project is to sort a given stack of numbers using only the allowed "moves" (more details in en.dubject.pdf). 
+The numbers must be sorted in as few "moves" as possible.
 
-Unfortunately, these numbers are not guaranteed and it will exceed limits around 1% of the time, tyring to fix this.
+In order to move a number from one stack to the other, that number has to be at the top of it's stack. 
+If you want to move across a number that is not at the top of it's stack, you must either rotate or reverse rotate the stack
+as many times as it takes for the desired number to reach the top of the stack.
 
-I have included the checker provided by the school but will make my own in the near future.
+I have used the approach of moving most numbers into stack "b" and then at each iteration, calculating which number can
+be moved into it's correct position in stack "a".
 
-The approach is quite simple. First, I make a sorted copy of the array as this is necessary for the next step.
+I have used a few optimisations to help with the sorting.
 
-Next, I start to split array a. Any number in the last third (highest numbers) of the sorted array goes to the bottom of 
-the second array (array b), any number in the middle third of the sorted array goes to the top of array b, and
-any number from the first third (lowest numbers) goes to the bottom of the first array (array a).
+Firstly, I calculate the longest incresaing subsequence that exists in the original set of numbers. I leave these numbers
+in place in stack "a" when moving numbers to "b" as they are already sorted as this saves unnecessary moves.
 
-Once that is done, I push all the numbers from array a (except for the lowest 5 numbers) into array b. Array b now contains
-the lowest value third of numbers (minus the 5 that are still in array a) on top, the middle third of numbers in the middle
-and the biggest numbers at the bottom. This makes sorting them into array a more efficient.
+I also use the approach of breaking the numbers up into chunks when moving them to "b" as this helps sorting them back to
+"a" more efficiently. I sort the numbers twice before my final sort, once with the chunks in "b" being highest numbers at
+tho top, middle numbers in the middle, and low numbers at the bottom, and then again in reverse (lowest numbers at top).
 
-The final five numbers get sorted and we turn our attention to array b.
+I then compare the results from the two different "pre-sorts" and sort the numbers a final time using the most efficient approach.
 
-Before pushing any number from array b to array a, we calculate, for every number in array b, how many moves would be
-required on both arrays to get that number into it's correct position. Once we've found the most efficient move, we
-perform the required operations to move that number into it's sorted place in array a.
+Base on my tests, results are:
+3 numbers: less than 3 moves
+5 numbers: usally less than 10, never more than 12
+100 numbers: usually less than 600, never more than 700 (full marks)
+500 numbers: usually less than 5000, never more than 5500 (full marks)
+
+I have also completed the bonus which is to make a copy of the "checker" provided with the project. This bonus was incredibly easy
+as we have already written almost all the code needed for it (executing moves). I just had to refactor a bit and add a function
+to take the instructions from the standard input.
