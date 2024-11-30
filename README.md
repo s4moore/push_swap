@@ -50,8 +50,13 @@ I also completed the bonus part of the project, which was to create a "checker" 
 To compile the project, follow these steps:
 
 ### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/push_swap.git
+cd push_swap
+```
 
-
+### 2. Compile the project
+To compile the project and generate the push_swap executable, run:
 ```bash
 make
 ```
