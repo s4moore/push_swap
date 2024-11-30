@@ -94,7 +94,7 @@ To use the checker program to validate the output of push_swap, you can pass a s
 ```
 This will check whether the sequence of moves sorts the numbers correctly.
 
-#💡 Key Concepts & Challenges
+# 💡 Key Concepts & Challenges
 Efficiency: Minimizing the number of moves required to sort the stack is the primary goal.
 Memory Management: Ensuring the program handles large inputs within the constraints of the project.
 Algorithm Optimization: Implementing optimizations such as chunking and LIS to reduce the number of required operations.
